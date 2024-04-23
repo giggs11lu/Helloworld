@@ -24,6 +24,7 @@ jobs:
     - name: test html
       run:
         echo 1111111test
+        ls /home/runner/work/Helloworld/Helloworld
 
     - name: deploy
       uses: easingthemes/ssh-deploy@v2.1.1
