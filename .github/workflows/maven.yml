@@ -30,7 +30,7 @@ jobs:
       uses: easingthemes/ssh-deploy@v2.1.1
       env: 
         SSH_PRIVATE_KEY: ${{secrets.UBUNTU_PRIVATE_KEY}}
-        SOURCE: "./test.html"
+        SOURCE: "./index.html"
         REMOTE_HOST: ${{secrets.UBUNTU_HOST}}
         REMOTE_USER: ${{secrets.UBUNTU_USER}}
         TARGET: "/tmp"
