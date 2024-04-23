@@ -25,15 +25,19 @@ jobs:
       run:
         echo 1111111test
 
-    - name: scp ssh pipelines
-      uses: cross-the-world/ssh-scp-ssh-pipelines@latest
-      with: 
-        host: ${{secrets.UBUNTU_HOST}}
-        user: ${{secrets.UBUNTU_USER}}
-        pass: ${{secrets.UBUNTU_PASS}}
-        scp: |
-          ./test.html => /tmp
-        last_ssh: |
-          echo "ok...3"
+    - name: deploy
+      uses: easingthemes/ssh-deploy@v2.1.1
+      env: 
+        SSH_PRIVATE_KEY: ${{secrets.UBUNTU_PRIVATE_KEY}}
+        SOURCE: "./test.html"
+        REMOTE_HOST: ${{secrets.UBUNTU_HOST}}
+        REMOTE_USER: ${{secrets.UBUNTU_USER}}
+        TARGET: "/tmp"
+
+    - name: end
+      run:
+        echo ok...
+      
+        
           
         
