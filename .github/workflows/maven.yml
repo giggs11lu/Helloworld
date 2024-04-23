@@ -22,9 +22,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: test html
-      run:
+      run: |
         echo 1111111test
-        ls /home/runner/work/Helloworld/Helloworld
+        ls -l /home/runner/work/Helloworld/Helloworld
 
     - name: deploy
       uses: easingthemes/ssh-deploy@v2.1.1
