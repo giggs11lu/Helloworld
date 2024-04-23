@@ -33,7 +33,7 @@ jobs:
         SOURCE: "index.html"
         REMOTE_HOST: ${{ secrets.UBUNTU_HOST }}
         REMOTE_USER: ${{ secrets.UBUNTU_USER }}
-        TARGET: "/tmp/test"
+        TARGET: "/tmp/test/"
         SCRIPT_BEFORE: |
           whoami
           ls -al
