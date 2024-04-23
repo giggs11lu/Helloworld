@@ -27,12 +27,12 @@ jobs:
         ls -l /home/runner/work/Helloworld/Helloworld
 
     - name: deploy
-      uses: easingthemes/ssh-deploy@v2.1.1
+      uses: easingthemes/ssh-deploy@main
       env: 
-        SSH_PRIVATE_KEY: ${{secrets.UBUNTU_PRIVATE_KEY}}
-        SOURCE: "./index.html"
-        REMOTE_HOST: ${{secrets.UBUNTU_HOST}}
-        REMOTE_USER: ${{secrets.UBUNTU_USER}}
+        SSH_PRIVATE_KEY: ${{ secrets.UBUNTU_PRIVATE_KEY }}
+        SOURCE: "index.html"
+        REMOTE_HOST: ${{ secrets.UBUNTU_HOST }}
+        REMOTE_USER: ${{ secrets.UBUNTU_USER }}
         TARGET: "/tmp"
 
     - name: end
