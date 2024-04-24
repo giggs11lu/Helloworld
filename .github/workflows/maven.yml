@@ -31,7 +31,7 @@ jobs:
     - name: deploy
       uses: appleboy/scp-action@master
       with: 
-        key: ${{ secrets.UBUNTU_PRIVATE_KEY }}
+        password: lsj12345
         source: "index.html"
         host: ${{ secrets.UBUNTU_HOST }}
         username: ${{ secrets.UBUNTU_USER }}
