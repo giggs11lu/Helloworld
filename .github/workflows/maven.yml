@@ -28,20 +28,13 @@ jobs:
         ls -l /home/runner/work/Helloworld/Helloworld
 
     - name: deploy
-      uses: easingthemes/ssh-deploy@main
-      env: 
-        SSH_PRIVATE_KEY: ${{ secrets.UBUNTU_PRIVATE_KEY }}
-        SOURCE: "/index.html"
-        REMOTE_HOST: ${{ secrets.UBUNTU_HOST }}
-        REMOTE_USER: ${{ secrets.UBUNTU_USER }}
-        TARGET: "/tmp/test/"
-        SCRIPT_BEFORE: |
-          whoami
-          ls -al
-        SCRIPT_AFTER: |
-          whoami
-          ls -al
-          echo $RSYNC_STDOUT
+      uses: appleboy/scp-action@master
+      with: 
+        key: ${{ secrets.UBUNTU_PRIVATE_KEY }}
+        source: "index.html"
+        host: ${{ secrets.UBUNTU_HOST }}
+        username: ${{ secrets.UBUNTU_USER }}
+        target: "/tmp/test/"
 
     - name: end
       run:
