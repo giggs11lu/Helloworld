@@ -24,6 +24,7 @@ jobs:
     - name: test html
       run: |
         echo 1111111test2
+        nc -vz 172.27.130.35 22
         echo $GITHUB_WORKSPACE
         ls -l /home/runner/work/Helloworld/Helloworld
 
